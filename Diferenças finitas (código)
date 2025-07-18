@@ -1,0 +1,14 @@
+import numpy as np
+def diferenca_finita(f, x, h=1e-5, metodo="central"):
+    if metodo == "frente":
+        return (f(x + h) - f(x)) / h
+    elif metodo == "tras":
+        return (f(x) - f(x - h)) / h
+    elif metodo == "central":
+        return (f(x + h) - f(x - h)) / (2 * h)
+    else:
+        raise ValueError("Método inválido.")
+if _name_ == "_main_":
+    f = np.sin
+    x = 0.0
+    print(diferenca_finita(f, x, metodo="central"))
