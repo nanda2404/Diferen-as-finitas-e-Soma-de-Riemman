@@ -1,0 +1,15 @@
+Def soma_riemann(f, a, b, n, metodo=”esquerda”):
+    Dx = (b – a) / n
+    If metodo == “esquerda”:
+        X = np.linspace(a, b – dx, n)
+    Elif metodo == “direita”:
+        X = np.linspace(a + dx, b, n)
+    Elif metodo == “meio”:
+        X = np.linspace(a + dx/2, b – dx/2, n)
+    Else:
+        Raise ValueError(“Método inválido.”)
+    Return np.sum(f(x) * dx)
+
+If _name_ == “_main_”:
+    F = lambda x: x**2
+    Print(soma_riemann(f, 0, 1, 100, metodo=”esquerda”))
